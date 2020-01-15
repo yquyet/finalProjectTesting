@@ -8,7 +8,7 @@ import tests.PageProvider;
 
 import java.util.List;
 
-public class EditApplicationPage extends PageProvider {
+public class EditApplicationPage {
     @FindBy(xpath = "/html/body/div/div/div/div[4]/div/form/div[2]/input")
     WebElement editAppName;
 
@@ -36,23 +36,23 @@ public class EditApplicationPage extends PageProvider {
     }
 
     public void setEditInfo(String appName, String expiration, String userBase) throws InterruptedException {
-        getEditApplicationPage().editAppName.clear();
+        editAppName.clear();
         if (!appName.equals("null")) {
-            getEditApplicationPage().editAppName.sendKeys(appName);
+            editAppName.sendKeys(appName);
         }
-        getEditApplicationPage().editSessionExpiration.clear();
+        editSessionExpiration.clear();
         if (!expiration.equals("null")) {
-            getEditApplicationPage().editSessionExpiration.sendKeys(expiration);
+            editSessionExpiration.sendKeys(expiration);
         }
         if (!userBase.equals("null")) {
-            getEditApplicationPage().getSentUserBase.sendKeys(userBase);
+            getSentUserBase.sendKeys(userBase);
         }
 
 
     }
 
-    public void setClickUpdate() throws InterruptedException {
-        getEditApplicationPage().updateButton.click();
+    public void setClickUpdate()  {
+        updateButton.click();
 
     }
 
